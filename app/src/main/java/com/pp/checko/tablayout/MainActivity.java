@@ -68,11 +68,20 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             Log.i(TAG,"instantiateItem" + position );
-            View view = getLayoutInflater().inflate(R.layout.viewpager,
-                    container, false);
+            View view;
+            switch(position) {
+                case 0:
+                    view = getLayoutInflater().inflate(R.layout.page_1,container,false);
+                    break;
+                case 1:
+                    view = getLayoutInflater().inflate(R.layout.page_2,container,false);
+                    break;
+                case 2:
+                default:
+                    view = getLayoutInflater().inflate(R.layout.page_3,container,false);
+                    break;
+            }
             container.addView(view);
-            TextView title = (TextView) view.findViewById(R.id.item_title);
-            title.setText(String.valueOf(position + 1));
             return view;
         }
 
