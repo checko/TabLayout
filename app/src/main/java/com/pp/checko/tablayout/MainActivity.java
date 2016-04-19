@@ -48,6 +48,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void OnButtonClicked(View v) {
+        switch(v.getId()){
+            case R.id.btn1:
+                Log.i(TAG,"1");
+                break;
+            case R.id.btn2:
+                Log.i(TAG,"2");
+                break;
+            case R.id.btn3:
+                Log.i(TAG,"3");
+                break;
+            default:
+                Log.i(TAG,"something..");
+        }
+    }
+
     class SamplePagerAdapter extends PagerAdapter {
 
         @Override
